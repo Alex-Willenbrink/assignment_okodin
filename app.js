@@ -17,10 +17,22 @@ app.use(session(
 //   name: 'session'
 // }))
 const exhbs = require("express-handlebars");
-const hbs = exbhs.create({ defaultLayout: "main" });
+const hbs = exhbs.create({ defaultLayout: "main" });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
+let sess;
+
+app.get("/", (req, res) => {
+  res.render("home");
+})
+
+app.post("/login", (req, res) => {
+  sess = req.session;
+  sess.username = req.body.username;
+
+  res.redirect("/profile")
+})
 
 
 app.listen(3000, () => {

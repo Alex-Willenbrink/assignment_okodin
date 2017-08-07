@@ -28,10 +28,10 @@ module.exports = {
         children: i,
         occupation: "Vikings",
         education: "Viking Code School",
-        userId: i
+        userId: i + 1
       });
     }
-    return queryInterface.bulkInsert('Profile', profiles);
+    return queryInterface.bulkInsert('Profiles', profiles);
   },
 
   down: function(queryInterface, Sequelize) {
@@ -42,6 +42,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-    return queryInterface.bulkDelete('Profile', null, {}, models.Profile);
+    return queryInterface.bulkDelete('Profiles', null, {}, models.Profile);
   }
 };

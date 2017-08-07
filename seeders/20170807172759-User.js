@@ -1,7 +1,7 @@
 'use strict';
 
 let models = require("./../models");
-console.log(Object.keys(models));
+// console.log(Object.keys(models));
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
@@ -20,9 +20,10 @@ module.exports = {
       users.push({
         username: `foobar${i}`,
         email: `foobar${i}@gmail.com`,
-        profileId: i});
+        profileId: i + 1
+      });
     }
-    return queryInterface.bulkInsert('User', users);
+    return queryInterface.bulkInsert('Users', users);
   },
 
   down: function (queryInterface, Sequelize) {
@@ -33,6 +34,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-   return queryInterface.bulkDelete('User', null, {}, models.User);
+   return queryInterface.bulkDelete('Users', null, {}, models.User);
   }
 };
