@@ -1,4 +1,7 @@
 'use strict';
+
+const models = require("../models");
+
 module.exports = function(sequelize, DataTypes) {
   var Profile = sequelize.define('Profile', {
     userId: DataTypes.INTEGER,
@@ -13,12 +16,12 @@ module.exports = function(sequelize, DataTypes) {
     children: DataTypes.INTEGER,
     occupation: DataTypes.STRING,
     education: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  })
+
+  Profile.associate = function(models) {
+    Profile.belongsTo(models.User, {
+      foreignKey: userId
+    };
+  }
   return Profile;
 };

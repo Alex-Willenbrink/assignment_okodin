@@ -19,8 +19,7 @@ module.exports = {
     for (let i = 0; i < 3; i++) {
       users.push({
         username: `foobar${i}`,
-        email: `foobar${i}@gmail.com`,
-        profileId: i + 1
+        email: `foobar${i}@gmail.com`
       });
     }
     return queryInterface.bulkInsert('Users', users);
