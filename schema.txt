@@ -1,0 +1,10 @@
+User: username, email, ProfileID
+
+Profile: fname, lname, age, city, distance, gender, mstatus, height, children - INTEGER, occupation, education
+
+Pets: dogs, cats, horses, other
+
+ProfilePets: ProfileId, PetsId
+
+
+sequelize model:create --name User --attributes "username:string email:string profileId:integer"
