@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 const models = require("../models");
 
 module.exports = function(sequelize, DataTypes) {
-  var Profile = sequelize.define('Profile', {
-    userId: DataTypes.INTEGER,
+  var Profile = sequelize.define("Profile", {
     fname: DataTypes.STRING,
     lname: DataTypes.STRING,
+    userid: DataTypes.INTEGER,
     age: DataTypes.INTEGER,
     city: DataTypes.STRING,
     distance: DataTypes.INTEGER,
@@ -16,12 +16,11 @@ module.exports = function(sequelize, DataTypes) {
     children: DataTypes.INTEGER,
     occupation: DataTypes.STRING,
     education: DataTypes.STRING
-  })
-
+  });
   Profile.associate = function(models) {
     Profile.belongsTo(models.User, {
-      foreignKey: userId
-    };
-  }
+      foreignKey: "userId"
+    });
+  };
   return Profile;
 };
