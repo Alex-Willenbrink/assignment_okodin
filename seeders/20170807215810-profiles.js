@@ -27,7 +27,7 @@ module.exports = {
         children: i,
         occupation: "Vikings",
         education: "Viking Code School",
-        userId: i + 1
+        userid: i + 1
       });
     }
     return queryInterface.bulkInsert("Profiles", profiles);

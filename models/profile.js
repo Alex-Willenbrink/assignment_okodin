@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
   });
   Profile.associate = function(models) {
     Profile.belongsTo(models.User, {
-      foreignKey: "userId"
+      foreignKey: "userid"
     });
   };
   return Profile;

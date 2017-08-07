@@ -77,23 +77,24 @@ router.post("/profileCreate", (req, res) => {
     }).spread(result => {
       user = result;
 
-      profileParams.userId = user.id;
+      profileParams.userid = user.id;
       return Profile.findOrCreate({
         defaults: profileParams,
-        where: { userId: user.id },
+        where: { userid: user.id },
         transaction: t
       })
         .then(() => {
-          res.render("profile", { profileParams });
+          return res.render("profile", { profileParams });
         })
         .catch(e => {
-          res.status(500).send(e.stack);
+          return res.status(500).send(e.stack);
         });
     });
   });
 
-  console.log(req.body);
-  res.end("test");
+  // console.log(req.body);
+
+  // res.end("test");
 });
 
 module.exports = router;

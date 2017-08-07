@@ -11,7 +11,6 @@
     "seed": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
     "seeds": "npm run sequelize db:migrate:undo:all && npm run sequelize db:migrate && npm run sequelize db:seed:all",
     "sql": "node_modules/sequelize-cli/bin/sequelize"
-
   },
   "repository": {
     "type": "git",
@@ -33,7 +32,7 @@
     "method-override": "^2.3.9",
     "morgan": "^1.8.2",
     "morgan-toolkit": "^1.0.2",
-    "pg": "^7.1.0",
+    "pg": "^6.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.4.2"
   }
